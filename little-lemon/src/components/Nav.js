@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-// import "./Nav.css"; // Optional: for styling
+import "../css/Nav.css";
 
 const Nav = () => {
   return (
