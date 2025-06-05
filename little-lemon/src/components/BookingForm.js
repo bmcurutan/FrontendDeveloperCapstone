@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import "../css/Booking.css";
 
-const ReservationForm = () => {
+const ReservationForm = ({ availableTimes, dispatch }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
-  const [availableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    dispatch(selectedDate); 
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ date, time, guests, occasion });
-    // TODO
+
+    if (time) {
+      dispatch({ type: "remove", payload: time });
+      setTime(""); 
+      alert("Reservation submitted!");
+    }
   };
 
   return (
@@ -28,7 +31,7 @@ const ReservationForm = () => {
         type="date"
         id="res-date"
         value={date}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={handleDateChange}
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -38,9 +41,9 @@ const ReservationForm = () => {
         onChange={(e) => setTime(e.target.value)}
       >
         <option value="" />
-        {availableTimes.map((t) => (
-          <option key={t} value={t}>
-            {t}
+        {availableTimes.map((time) => (
+          <option key={time} value={time}>
+            {time}
           </option>
         ))}
       </select>
@@ -68,7 +71,11 @@ const ReservationForm = () => {
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" />
+      <input
+        type="submit"
+        value="Make Your Reservation"
+        disabled={!time}
+      />
     </form>
   );
 };
