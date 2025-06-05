@@ -1,8 +1,8 @@
 import React from "react";
-import "../css/Header.css"; 
+import "../css/CallToAction.css"; 
 import food from "../assets/food.jpg";
 
-const Header = () => {
+const CallToAction = () => {
   return (
     <header className="header">
       <div className="header-content">
@@ -23,4 +23,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default CallToAction;

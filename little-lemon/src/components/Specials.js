@@ -1,9 +1,9 @@
 import React from "react";
 
-const Main = () => {
+const Specials = () => {
   return (
     <></>
   );
 };
 
-export default Main;
+export default Specials;
