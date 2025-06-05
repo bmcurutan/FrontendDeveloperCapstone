@@ -23,7 +23,7 @@ const Footer = () => {
         </ul>
 
         <ul className="footer-links">
-            <li>123 Main St.<br />Chicago, IL</li>
+            <li>123 Main St.<br />Chicago, IL 98765</li>
             <li>(123) 456-7890</li>
             <li><Link to="/">info@littlelemon.com</Link></li>
         </ul>
