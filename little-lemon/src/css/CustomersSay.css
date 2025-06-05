@@ -1,0 +1,57 @@
+.testimonials {
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #495e57;
+}
+
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.testimonials-text {
+  flex: 1;
+}
+
+ .testimonials-text h1 {
+  color: #f4ce14;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: -2.5rem;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #edefee;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 20px;
+}

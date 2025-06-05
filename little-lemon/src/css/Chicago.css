@@ -1,0 +1,47 @@
+.chicago {
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chicago-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.chicago-text {
+  flex: 1;
+  color: black;
+  margin-right: 1rem;
+}
+
+.chicago-text h1 {
+  font-size: 60px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: -2rem;
+  margin-top: -1rem;
+}
+
+.chicago-text h2 {
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.chicago-text p {
+  font-size: 22px;
+  line-height: 1.6;
+  max-width: 600px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.chicago-image img {
+  border-radius: 12px;
+  width: 370px;
+  object-fit: cover;
+}

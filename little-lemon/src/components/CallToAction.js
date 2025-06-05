@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/CallToAction.css"; 
 import food from "../assets/food.jpg";
 
@@ -10,10 +11,10 @@ const CallToAction = () => {
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
           <p>
-            We are a family owned Mediterranean restaurant, focused on
+            We are a family-owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button>Reserve a Table</button>
+          <button><Link to="/reservations">Reserve a Table</Link></button>
         </div>
         <div className="header-image">
           <img src={food} alt="Mediterranean food" />
