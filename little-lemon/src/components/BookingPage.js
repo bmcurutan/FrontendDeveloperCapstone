@@ -4,16 +4,11 @@ import BookingForm from "./BookingForm";
 const updateTimes = (state, action) => {
   switch (action.type) {
     case "initialize":
-      return [
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00"
-      ];
+      return window.fetchAPI(new Date());
+    case "update":
+      return window.fetchAPI(new Date(action.date));
     case "remove":
-      return state.filter((time) => time !== action.payload);
+      return state.filter((time) => time !== action.date);
     default:
       return state;
   }

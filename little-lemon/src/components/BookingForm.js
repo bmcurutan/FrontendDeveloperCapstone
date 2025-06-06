@@ -10,7 +10,7 @@ const ReservationForm = ({ availableTimes, dispatch }) => {
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
-    dispatch(selectedDate); 
+    dispatch({ type: "update", date: selectedDate });
   };
 
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ const ReservationForm = ({ availableTimes, dispatch }) => {
     console.log({ date, time, guests, occasion });
 
     if (time) {
-      dispatch({ type: "remove", payload: time });
+      dispatch({ type: "remove", date: time });
       setTime(""); 
       alert("Reservation submitted!");
     }
