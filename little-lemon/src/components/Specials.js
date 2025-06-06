@@ -1,4 +1,3 @@
-import React from "react";
 import "../css/Specials.css"; 
 import greeksalad from "../assets/greeksalad.jpg";
 import bruschetta from "../assets/bruschetta.svg";
@@ -46,7 +45,7 @@ const Specials = () => {
       <div className="specials-content">
         <div className="specials-text">
           <h1>This Week's Specials</h1>
-          <button>Online Menu</button>
+          <button aria-label="On Click">Online Menu</button>
         </div>
         <div className="cards-container">
           {specials.map((item, idx) => (

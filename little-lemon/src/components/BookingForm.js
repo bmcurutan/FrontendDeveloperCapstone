@@ -85,6 +85,7 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
       <input
         type="submit"
         value="Make Your Reservation"
+        aria-label="On Click"
         disabled={!date || !time || !guests}
       />
     </form>
