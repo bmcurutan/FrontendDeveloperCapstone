@@ -21,12 +21,13 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
     occasion
   }
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ date, time, guests, occasion });
 
     if (submitForm(formData)) {
-      const navigate = useNavigate();
       navigate("/confirmation")
     } else {
       alert("Error: Please try again.");
@@ -50,7 +51,7 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
         onChange={(e) => setTime(e.target.value)}
       >
         <option value="" />
-        {availableTimes.map((time) => (
+        {availableTimes?.map((time) => (
           <option key={time} value={time}>
             {time}
           </option>

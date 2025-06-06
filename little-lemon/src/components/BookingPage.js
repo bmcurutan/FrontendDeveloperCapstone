@@ -1,23 +1,24 @@
 import { useReducer } from "react";
 import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI } from "../api"; 
 
 const updateTimes = (state, action) => {
   switch (action.type) {
     case "initialize":
-      return window.fetchAPI(new Date());
+      return fetchAPI(new Date());
     case "update":
-      return window.fetchAPI(new Date(action.date));
+      return fetchAPI(new Date(action.date));
     default:
       return state;
   }
 };
 
 const initializeTimes = () => {
-  return window.fetchAPI(new Date());
+  return fetchAPI(new Date());
 };
 
 const submitForm = (formData) => {
-  const result = window.submitAPI(formData); 
+  const result = submitAPI(formData); 
   return result;
 };
 
