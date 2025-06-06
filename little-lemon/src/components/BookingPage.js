@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import BookingForm from "./BookingForm";
 
 const updateTimes = (state, action) => {
@@ -7,14 +7,19 @@ const updateTimes = (state, action) => {
       return window.fetchAPI(new Date());
     case "update":
       return window.fetchAPI(new Date(action.date));
-    case "remove":
-      return state.filter((time) => time !== action.date);
     default:
       return state;
   }
 };
 
-const initializeTimes = () => updateTimes([], { type: "initialize" });
+const initializeTimes = () => {
+  return window.fetchAPI(new Date());
+};
+
+const submitForm = (formData) => {
+  const result = window.submitAPI(formData); 
+  return result;
+};
 
 const BookingPage = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
@@ -26,7 +31,7 @@ const BookingPage = () => {
         <div className="booking-text">
           <h1>Reservations</h1>
         </div>
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
       </div>
     </section>
     </main>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from 'react-router';
 import "../css/Booking.css";
 
-const ReservationForm = ({ availableTimes, dispatch }) => {
+const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
@@ -13,14 +14,22 @@ const ReservationForm = ({ availableTimes, dispatch }) => {
     dispatch({ type: "update", date: selectedDate });
   };
 
+  const formData = {
+    date,
+    time,
+    guests,
+    occasion
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ date, time, guests, occasion });
 
-    if (time) {
-      dispatch({ type: "remove", date: time });
-      setTime(""); 
-      alert("Reservation submitted!");
+    if (submitForm(formData)) {
+      const navigate = useNavigate();
+      navigate("/confirmation")
+    } else {
+      alert("Error: Please try again.");
     }
   };
 

@@ -33,6 +33,10 @@
   background-color: #e3c312;
 }
 
+.booking-form input[type="submit"]:disabled {
+  background-color: lightgray;
+}
+
 .booking {
   padding: 2rem 2rem;
   display: flex;
