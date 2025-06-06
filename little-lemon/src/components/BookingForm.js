@@ -36,15 +36,16 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
-      <label htmlFor="res-date">Choose date</label>
+      <label htmlFor="res-date">Choose date *</label>
       <input
         type="date"
         id="res-date"
         value={date}
         onChange={handleDateChange}
+        min={new Date().toISOString().split("T")[0]} // Disable dates before today
       />
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time">Choose time *</label>
       <select
         id="res-time"
         value={time}
@@ -58,7 +59,7 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
         ))}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests">Number of guests *</label>
       <input
         type="number"
         id="guests"
@@ -84,7 +85,7 @@ const ReservationForm = ({ availableTimes, dispatch, submitForm }) => {
       <input
         type="submit"
         value="Make Your Reservation"
-        disabled={!time}
+        disabled={!date || !time || !guests}
       />
     </form>
   );
