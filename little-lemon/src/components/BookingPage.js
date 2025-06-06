@@ -5,12 +5,12 @@ const updateTimes = (state, action) => {
   switch (action.type) {
     case "initialize":
       return [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
+        "17:00",
+        "18:00",
+        "19:00",
+        "20:00",
+        "21:00",
+        "22:00"
       ];
     case "remove":
       return state.filter((time) => time !== action.payload);
@@ -19,7 +19,7 @@ const updateTimes = (state, action) => {
   }
 };
 
-const initializeTimes = () => updateTimes([], { type: 'initialize' });
+const initializeTimes = () => updateTimes([], { type: "initialize" });
 
 const BookingPage = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
@@ -39,3 +39,4 @@ const BookingPage = () => {
 };
 
 export default BookingPage;
+export { initializeTimes, updateTimes };
